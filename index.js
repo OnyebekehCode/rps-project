@@ -30,6 +30,14 @@ function getHumanChoice() {
     } else humanChoice = prompt("input the correct word");
     return humanChoice;
 };
+
+
+
+//create a function playRound
+//set the function to compare user input and computer value and decide winner
+//create function playGame
+//set function to make game end at the 5th round
+function playGame() {
 //create Variable named humanScore and computerScore
 //initialise variable to 0
 let computerScore = 0;
@@ -42,25 +50,12 @@ function addComScores(){
 function addHumScores() {
     return humanScore += 1
 }
-
-
-
-//create a function playRound
-//set the function to compare user input and computer value and decide winner
-//create function playGame
-//set function to make game end at the 5th round
-function playGame() {
-    if (computerScore >= 5) {
-        alert("Computer gets the crown")
-    }else if (humanScore >= 5) {
-        alert("You're the Winner")
-    }else {
-        console.log("Play on")
-    }
-
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == ("Rock")) {
         if (computerChoice == ("Scissors")) {
+//I called the function to increment the variable scores immediately because
+//i didn't find any other way i could call it without getting errors so i used
+// it here instead of printing to the screen whether the computer or the player won
             addHumScores()
         }else if (computerChoice == ("Paper")) {
             addComScores()
@@ -83,13 +78,23 @@ const humanSelection = getHumanChoice();
 const computerSelecton = getComputerChoice();
 
 playRound(humanSelection, computerSelecton);
-
+// checks who has the most points therefore who is leading as the game is progresing
 if (computerScore > humanScore) {
     console.log("Computer wins")
 }else if (humanScore > computerScore) {
     console.log("you win")
 }else {
     console.log("")
+}
+
+
+//checks and confirms who wins after five rounds
+if (computerScore >= 5) {
+    alert("Computer gets the crown")
+}else if (humanScore >= 5) {
+    alert("You're the Winner")
+}else {
+    console.log("Play on")
 }
 
 };
