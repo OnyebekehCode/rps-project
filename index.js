@@ -20,16 +20,12 @@ function getComputerChoice () {
 //create getHumanChoice function
 //set to collect input of one of three strings Rock Paper Scissors
 function getHumanChoice() {
-    let humanChoice = prompt("write either rock, paper or scissors");
-    if (humanChoice.toLowerCase() === "rock") {
-        humanChoice = ("rock");
-    }else if (humanChoice.toLowerCase() === "paper"){
-        humanChoice = ("paper")
-    }else if (humanChoice.toLowerCase() === "scissors") {
-        humanChoice = ("scissors")
-    } else humanChoice = prompt("input the correct word");
-    return humanChoice;
-};
+    let humanChoice = prompt("write either rock, paper or scissors").toLowerCase();
+    if (humanChoice =="rock"|| humanChoice == "paper"|| humanChoice == "scissors") {
+    }else humanChoice = prompt("input the correct word");
+        return humanChoice;
+}
+
 
 
 
