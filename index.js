@@ -50,32 +50,39 @@ function playRound(humanChoice, computerChoice) {
 //I called the function to increment the variable scores immediately because
 //i didn't find any other way i could call it without getting errors so i used
 // it and also printing to the screen whether the computer or the player won
-    if (humanChoice == ("rock")) {
-        if (computerChoice == ("scissors")) {
-            addHumScores();
-            console.log("You win rock crushes scissors")
-        }else if (computerChoice == ("paper")) {
-            addComScores();
-            console.log("Computer win paper covers rock")
-        }else (console.log("draw"))
-        
-    }else if (humanChoice == ("paper")) {
-        if (computerChoice == ("scissors")) {
-            addComScores();
-            console.log("Computer win scissors cuts paper");
-        }else if (computerChoice == ("rock")) {
-            addHumScores();
-            console.log("You win paper Covers rock");
-        }else console.log("draw");
-    }else (humanChoice == ("scissors")); {
-        if (computerChoice == ("paper")) {
-            addHumScores();
-            console.log("You win scissors cuts paper");
-        }else if (computerChoice == ("rock")) {
-            addComScores();
-            console.log("Computer win rock crushes scissors");
-        }else {(console.log("draw"))
-    }
+    switch (humanChoice) {
+        case "rock":
+            if (computerChoice == "scissors") {
+                addHumScores();
+                console.log("You win rock crushes scissors")
+            }else if (computerChoice == "paper") {
+                addComScores();
+                console.log("Computer win paper covers rock")
+            }else {console.log("draw")
+            }
+            break;
+        case "paper":
+            if (computerChoice == "scissors") {
+                addComScores();
+                console.log("Computer win scissors cuts paper");
+            }else if (computerChoice == "rock") {
+                addHumScores();
+                console.log("You win paper Covers rock");
+            }else {console.log("draw");
+            }
+            break;
+        case "scissors":
+            if (computerChoice == "paper") {
+                addHumScores();
+                console.log("You win scissors cuts paper");
+            }else if (computerChoice == "rock") {
+                addComScores();
+                console.log("Computer win rock crushes scissors");
+            }else {(console.log("draw"))
+            }
+            break;
+            default:
+                console.log("playRound Malfunction")
     }
 }
 
