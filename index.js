@@ -22,9 +22,9 @@ function getComputerChoice () {
 function getHumanChoice() {
     let humanChoice = prompt("write either rock, paper or scissors").toLowerCase();
     if (humanChoice =="rock"|| humanChoice == "paper"|| humanChoice == "scissors") {
-    }else humanChoice = prompt("input the correct word");
         return humanChoice;
-}
+    }else humanChoice = prompt("input the correct word");
+};
 
 
 
