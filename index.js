@@ -83,8 +83,8 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelecton = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelecton = getComputerChoice();
 // checks who won by counting the addition to the score value
 //the idea behind it is that since anyone with addition get larger in numeric value
 //potential flaws is when both draw or both wins successively
