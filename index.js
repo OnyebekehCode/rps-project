@@ -4,7 +4,7 @@ console.log("Hello World")
 //create getComputerChoice function
 //set the function to return a random of three strings Rock Paper or scissors
 function getComputerChoice () {
-    let computerChoice = Math.floor(Math.random()*3 + 1);
+    let computerChoice = Math.floor(Math.random()*3);
     if  (computerChoice <= 1) {
         computerChoice = ("rock");
     }else if (computerChoice <= 2) {
@@ -23,7 +23,7 @@ function getHumanChoice() {
     let humanChoice = prompt("write either rock, paper or scissors").toLowerCase();
     if (humanChoice =="rock"|| humanChoice == "paper"|| humanChoice == "scissors") {
         return humanChoice;
-    }else humanChoice = prompt("input the correct word");
+    }else humanChoice = alert("input the correct word");
 };
 
 
@@ -39,13 +39,13 @@ function playGame() {
 let computerScore = 0;
 let humanScore = 0;
 // add to the variable computerScore if computer wins
-function addComScores(){
-    return computerScore += 1
-}
+//function addComScores(){
+  //  return computerScore += 1
+//}
 //add to the variable humanScore if human wins
-function addHumScores() {
-    return humanScore += 1
-}
+//function addHumScores() {
+  //  return humanScore += 1
+//}
 function playRound(humanChoice, computerChoice) {
 //I called the function to increment the variable scores immediately because
 //i didn't find any other way i could call it without getting errors so i used
@@ -53,37 +53,46 @@ function playRound(humanChoice, computerChoice) {
     switch (humanChoice) {
         case "rock":
             if (computerChoice == "scissors") {
-                addHumScores();
+               // addHumScores();
                 console.log("You win rock crushes scissors")
+                humanScore++
             }else if (computerChoice == "paper") {
-                addComScores();
+                //addComScores();
                 console.log("Computer win paper covers rock")
+                computerScore++
             }else {console.log("draw")
             }
             break;
         case "paper":
             if (computerChoice == "scissors") {
-                addComScores();
+                //addComScores();
                 console.log("Computer win scissors cuts paper");
+                computerScore++
             }else if (computerChoice == "rock") {
-                addHumScores();
-                console.log("You win paper Covers rock");
+               // addHumScores();
+                console.log("You win paper covers rock");
+                humanScore++
             }else {console.log("draw");
             }
             break;
         case "scissors":
             if (computerChoice == "paper") {
-                addHumScores();
+                //addHumScores();
                 console.log("You win scissors cuts paper");
+                humanScore++
             }else if (computerChoice == "rock") {
-                addComScores();
+               // addComScores();
                 console.log("Computer win rock crushes scissors");
+                computerScore++
             }else {(console.log("draw"))
             }
             break;
             default:
                 console.log("playRound Malfunction")
     }
+    console.log(humanScore)
+    console.log(computerScore)
+
 }
 
 let humanSelection = getHumanChoice();
