@@ -7,7 +7,7 @@ function getComputerChoice () {
     }else if (computerChoice <= 3){
         computerChoice = ("scissors");
     }else {
-        computerChoice = (" ")
+        computerChoice = (" ");
     };
     return computerChoice
 };
@@ -28,12 +28,12 @@ function playRound(humanChoice, computerChoice) {
     switch (humanChoice) {
         case "rock":
             if (computerChoice == "scissors") {
-                console.log("You win rock crushes scissors")
+                console.log("You win rock crushes scissors");
                 humanScore++
             }else if (computerChoice == "paper") {
-                console.log("Computer win paper covers rock")
+                console.log("Computer win paper covers rock");
                 computerScore++
-            }else {console.log(" it's a draw")
+            }else {console.log(" it's a draw");
             }
             break;
         case "paper":
@@ -53,34 +53,29 @@ function playRound(humanChoice, computerChoice) {
             }else if (computerChoice == "rock") {
                 console.log("Computer win rock crushes scissors");
                 computerScore++
-            }else {(console.log("it's a draw"))
+            }else {(console.log("it's a draw"));
             }
             break;
             default:
                 console.log("............")
     }
     return {computerScore, humanScore}
-}
+};
 let humanSelection = getHumanChoice();
 let computerSelecton = getComputerChoice();
 
 playRound(humanSelection, computerSelecton);
-
 console.log(computerScore);
 console.log(humanScore);
 
-
 if (computerScore == 3) {
-    alert("Computer gets the crown")
+    alert("Computer gets the crown");
 }else if (humanScore >= 3) {
-    alert("You're the Winner")
+    alert("You're the Winner");
 }else {
-    console.log("Play on")
-}
-
+    console.log("Play on");
 };
-
-
+};
 playGame();
 playGame();
 playGame();
