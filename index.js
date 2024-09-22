@@ -51,51 +51,67 @@ function addHumScores() {
     return humanScore += 1
 }
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice == ("Rock")) {
-        if (computerChoice == ("Scissors")) {
 //I called the function to increment the variable scores immediately because
 //i didn't find any other way i could call it without getting errors so i used
-// it here instead of printing to the screen whether the computer or the player won
-            addHumScores()
+// it and also printing to the screen whether the computer or the player won
+    if (humanChoice == ("Rock")) {
+        if (computerChoice == ("Scissors")) {
+            addHumScores();
+            console.log("You win Rock crushes Scissors")
         }else if (computerChoice == ("Paper")) {
-            addComScores()
+            addComScores();
+            console.log("Computer win Paper Covers Rock")
         }else (console.log("draw"))
+        
     }else if (humanChoice == ("Paper")) {
         if (computerChoice == ("Scissors")) {
-            addComScores()
+            addComScores();
+            console.log("Computer win Scissors cuts Paper");
         }else if (computerChoice == ("Rock")) {
-            addHumScores()
-        }else console.log("draw")
-    }else if (humanChoice == ("Scissors")) {
+            addHumScores();
+            console.log("You win Paper Covers Rock");
+        }else console.log("draw");
+    }else (humanChoice == ("Scissors")); {
         if (computerChoice == ("Paper")) {
-            addHumScores()
+            addHumScores();
+            console.log("You win Scissors cuts Paper");
         }else if (computerChoice == ("Rock")) {
-            addComScores()
-        }else (console.log("draw"))
-    }else (console.log("game malfunctioned"))
+            addComScores();
+            console.log("Computer win Rock crushes Scissors");
+        }else {(console.log("draw"))
+    }
+    }
 }
+
 const humanSelection = getHumanChoice();
 const computerSelecton = getComputerChoice();
-
-playRound(humanSelection, computerSelecton);
-// checks who has the most points therefore who is leading as the game is progresing
-if (computerScore > humanScore) {
+// checks who won by counting the addition to the score value
+//the idea behind it is that since anyone with addition get larger in numeric value
+//potential flaws is when both draw or both wins successively
+/*function checkScore() {
+    if (computerScore > humanScore) {
     console.log("Computer wins")
 }else if (humanScore > computerScore) {
     console.log("you win")
 }else {
-    console.log("")
+    console.log("tiedonscores")
 }
+} */
+playRound(humanSelection, computerSelecton);
+//checkScore();
+
 
 
 //checks and confirms who wins after five rounds
-if (computerScore >= 5) {
+/* if (computerScore >= 5) {
     alert("Computer gets the crown")
 }else if (humanScore >= 5) {
     alert("You're the Winner")
 }else {
     console.log("Play on")
-}
+} */
+//unfortunately this last code blocks containing if statements does not work
+//I can't pnpoint why either
 
 };
 
@@ -104,5 +120,3 @@ playGame();
 playGame();
 playGame();
 playGame();
-
-
