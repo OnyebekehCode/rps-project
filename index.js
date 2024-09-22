@@ -6,9 +6,9 @@ console.log("Hello World")
 function getComputerChoice () {
     let computerChoice = Math.floor(Math.random()*3 + 1);
     if  (computerChoice <= 1) {
-        computerChoice = ("Rock");
+        computerChoice = ("rock");
     }else if (computerChoice <= 2) {
-        computerChoice = ("Paper");
+        computerChoice = ("paper");
     }else if (computerChoice <= 3){
         computerChoice = ("scissors");
     }else {
@@ -20,13 +20,13 @@ function getComputerChoice () {
 //create getHumanChoice function
 //set to collect input of one of three strings Rock Paper Scissors
 function getHumanChoice() {
-    let humanChoice = prompt("write either Rock, Paper or Scissors");
+    let humanChoice = prompt("write either rock, paper or scissors");
     if (humanChoice.toLowerCase() === "rock") {
-        humanChoice = ("Rock");
+        humanChoice = ("rock");
     }else if (humanChoice.toLowerCase() === "paper"){
-        humanChoice = ("Paper")
+        humanChoice = ("paper")
     }else if (humanChoice.toLowerCase() === "scissors") {
-        humanChoice = ("Scissors")
+        humanChoice = ("scissors")
     } else humanChoice = prompt("input the correct word");
     return humanChoice;
 };
@@ -54,30 +54,30 @@ function playRound(humanChoice, computerChoice) {
 //I called the function to increment the variable scores immediately because
 //i didn't find any other way i could call it without getting errors so i used
 // it and also printing to the screen whether the computer or the player won
-    if (humanChoice == ("Rock")) {
-        if (computerChoice == ("Scissors")) {
+    if (humanChoice == ("rock")) {
+        if (computerChoice == ("scissors")) {
             addHumScores();
-            console.log("You win Rock crushes Scissors")
-        }else if (computerChoice == ("Paper")) {
+            console.log("You win rock crushes scissors")
+        }else if (computerChoice == ("paper")) {
             addComScores();
-            console.log("Computer win Paper Covers Rock")
+            console.log("Computer win paper covers rock")
         }else (console.log("draw"))
         
-    }else if (humanChoice == ("Paper")) {
-        if (computerChoice == ("Scissors")) {
+    }else if (humanChoice == ("paper")) {
+        if (computerChoice == ("scissors")) {
             addComScores();
-            console.log("Computer win Scissors cuts Paper");
-        }else if (computerChoice == ("Rock")) {
+            console.log("Computer win scissors cuts paper");
+        }else if (computerChoice == ("rock")) {
             addHumScores();
-            console.log("You win Paper Covers Rock");
+            console.log("You win paper Covers rock");
         }else console.log("draw");
-    }else (humanChoice == ("Scissors")); {
-        if (computerChoice == ("Paper")) {
+    }else (humanChoice == ("scissors")); {
+        if (computerChoice == ("paper")) {
             addHumScores();
-            console.log("You win Scissors cuts Paper");
-        }else if (computerChoice == ("Rock")) {
+            console.log("You win scissors cuts paper");
+        }else if (computerChoice == ("rock")) {
             addComScores();
-            console.log("Computer win Rock crushes Scissors");
+            console.log("Computer win rock crushes scissors");
         }else {(console.log("draw"))
     }
     }
