@@ -1,21 +1,22 @@
 body {
     background-color: azure;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 };
-#container{
+.container{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 };
-#score-container{
+
+.selection, .score{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+};
+
+#buttonDiv{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.selection{
-    display: flex;
-    justify-content: center;
-    align-content: space-between;
 };
-.score{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
