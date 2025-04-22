@@ -1,6 +1,21 @@
 body {
     background-color: azure;
+};
+#container{
+    display: flex;
+};
+#score-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.class {
-    fle
+.selection{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+};
+.score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
