@@ -1,11 +1,13 @@
+const computerScore = querySelector("#Computer");
+const HumanScore =  querySelector("#human");
+const button = queryselectorAll(".rock.paper.scissors");
+const display = querySelector("#ScoreBoard")
 
 
 
 
 
-
-
-
+/*
 function getComputerChoice () {
     let computerChoice = Math.floor(Math.random()*3 + 1);
     if  (computerChoice <= 1) {
@@ -90,3 +92,4 @@ playGame();
 playGame();
 playGame();
 playGame();
+*/
