@@ -1,8 +1,28 @@
-const computerScore = querySelector("#Computer");
-const HumanScore =  querySelector("#human");
-const button = queryselectorAll(".rock.paper.scissors");
-const display = querySelector("#ScoreBoard")
-
+const computer = document.querySelector("#Computer");
+const Human =  document.querySelector("#human");
+const button = document.queryselectorAll(".rock.paper.scissors");
+const display = document.querySelector("#ScoreBoard")
+let computerScore = 0;
+let humanScore = 0;
+function getComputerChoice () {
+    let computerScore = Math.floor(Math.random()*3 + 1);
+    if  (computerScore <= 1) {
+        computerScore = ("rock");
+    }else if (computerScore <= 2) {
+        computerScore = ("paper");
+    }else if (computerScore <= 3){
+        computerScore = ("scissors");
+    }else {
+        computerScore = (" ");
+    };
+    return computerScore
+};
+button.addEventListener("click",  function getHumanScore() {
+    if (humanScore =="rock"|| humanScore == "paper"|| humanScore == "scissors") {
+        return humanScore;
+    }else humanScore = alert("input the correct word");
+}
+);
 
 
 
