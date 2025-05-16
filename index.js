@@ -1,29 +1,72 @@
 const computer = document.querySelector("#Computer");
 const Human =  document.querySelector("#human");
-const button = document.queryselectorAll(".rock.paper.scissors");
+const button = document.querySelectorAll(".rock, .paper, .scissors");
 const display = document.querySelector("#ScoreBoard")
+const play = document.querySelector("#playButton")
 let computerScore = 0;
 let humanScore = 0;
 function getComputerChoice () {
-    let computerScore = Math.floor(Math.random()*3 + 1);
-    if  (computerScore <= 1) {
-        computerScore = ("rock");
-    }else if (computerScore <= 2) {
-        computerScore = ("paper");
-    }else if (computerScore <= 3){
-        computerScore = ("scissors");
+    let computerChoice = Math.floor(Math.random()*3 + 1);
+    if  (computerChoice <= 1) {
+        computerChoice = ("rock");
+    }else if (computerChoice <= 2) {
+        computerChoice = ("paper");
+    }else if (computerChoice <= 3){
+        computerChoice = ("scissors");
     }else {
-        computerScore = (" ");
+        computerChoice = (" ");
     };
-    return computerScore
+    return computerChoice
 };
-button.addEventListener("click",  function getHumanScore() {
-    if (humanScore =="rock"|| humanScore == "paper"|| humanScore == "scissors") {
-        return humanScore;
-    }else humanScore = alert("input the correct word");
-}
-);
+ function getHumanChoice(event) {
+    if (event.target.className =="rock"|| event.target.className == "paper"|| event.target.className == "scissors") {
+        return event.target.className;
+    }else event.target.className = alert("input the correct word");
+};
+let humanChoice = getHumanChoice(event);
+for (i = 0; i < button.length; i++) {
+    button[i].addEventListener("click", function(event) {
+    humanChoice = getHumanChoice();
+})};
 
+play.addEventListener("click", function playRound(humanChoice, computerChoice) {
+
+    switch (humanChoice) {
+        case "rock":
+            if (computerChoice == "scissors") {
+                alert("You win rock crushes scissors");
+                humanScore++
+            }else if (computerChoice == "paper") {
+                alert("Computer win paper covers rock");
+                computerScore++
+            }else {alert(" it's a draw");
+            }
+            break;
+        case "paper":
+            if (computerChoice == "scissors") {
+                alert("Computer win scissors cuts paper");
+                computerScore++
+            }else if (computerChoice == "rock") {
+                alert("You win paper covers rock");
+                humanScore++
+            }else {alert("it's a draw");
+            }
+            break;
+        case "scissors":
+            if (computerChoice == "paper") {
+                alert("You win scissors cuts paper");
+                humanScore++
+            }else if (computerChoice == "rock") {
+                alert("Computer win rock crushes scissors");
+                computerScore++
+            }else {(alert("it's a draw"));
+            }
+            break;
+            default:
+                alert("............") 
+        };
+    return {computerScore, humanScore}
+    });
 
 
 
