@@ -18,15 +18,15 @@ function getComputerChoice () {
     };
     return computerChoice
 };
- function getHumanChoice(event) {
+ function getHumanChoice() {
     if (event.target.className =="rock"|| event.target.className == "paper"|| event.target.className == "scissors") {
         return event.target.className;
     }else event.target.className = alert("input the correct word");
 };
-let humanChoice = getHumanChoice(event);
+let humanChoice = getHumanChoice();
 for (i = 0; i < button.length; i++) {
     button[i].addEventListener("click", function(event) {
-    humanChoice = getHumanChoice();
+    humanChoice = getHumanChoice(event);
 })};
 
 play.addEventListener("click", function playRound(humanChoice, computerChoice) {
