@@ -1,10 +1,11 @@
 const computer = document.querySelector("#Computer");
-const Human =  document.querySelector("#human");
+const human =  document.querySelector("#human");
 const button = document.querySelectorAll(".rock, .paper, .scissors");
 const display = document.querySelector("#ScoreBoard")
 const play = document.querySelector("#playButton")
 let computerScore = 0;
 let humanScore = 0;
+let humanChoice = ' '
 function getComputerChoice () {
     let computerChoice = Math.floor(Math.random()*3 + 1);
     if  (computerChoice <= 1) {
@@ -18,57 +19,38 @@ function getComputerChoice () {
     };
     return computerChoice
 };
- function getHumanChoice() {
-    if (event.target.className =="rock"|| event.target.className == "paper"|| event.target.className == "scissors") {
-        return event.target.className;
-    }else event.target.className = alert("input the correct word");
-};
-let humanChoice = getHumanChoice();
-for (i = 0; i < button.length; i++) {
-    button[i].addEventListener("click", function(event) {
-    humanChoice = getHumanChoice(event);
-})};
+button.forEach(button => {
+    button.addEventListener("click", (event) => {
+        humanChoice = event.target.className;
+        human.textContent = `Human chose: ${humanChoice}`;
+    })});
 
-play.addEventListener("click", function playRound(humanChoice, computerChoice) {
+play.addEventListener("click", () => {
+if (!humanChoice) {
+    alert("Please choose rock, paper, or scissors first!");
+        return;
+}
 
-    switch (humanChoice) {
-        case "rock":
-            if (computerChoice == "scissors") {
-                alert("You win rock crushes scissors");
-                humanScore++
-            }else if (computerChoice == "paper") {
-                alert("Computer win paper covers rock");
-                computerScore++
-            }else {alert(" it's a draw");
-            }
-            break;
-        case "paper":
-            if (computerChoice == "scissors") {
-                alert("Computer win scissors cuts paper");
-                computerScore++
-            }else if (computerChoice == "rock") {
-                alert("You win paper covers rock");
-                humanScore++
-            }else {alert("it's a draw");
-            }
-            break;
-        case "scissors":
-            if (computerChoice == "paper") {
-                alert("You win scissors cuts paper");
-                humanScore++
-            }else if (computerChoice == "rock") {
-                alert("Computer win rock crushes scissors");
-                computerScore++
-            }else {(alert("it's a draw"));
-            }
-            break;
-            default:
-                alert("............") 
-        };
-    return {computerScore, humanScore}
-    });
+const computerChoice = getComputerChoice();
+computer.textContent = `Computer chose: ${computerChoice}`;
 
+let result = "";
+if (humanChoice === computerChoice) {
+    result = "It's a draw!";
+} else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+) {
+    result = `You win! ${humanChoice} beats ${computerChoice}`;
+    humanScore++;
+} else {
+    result = `Computer wins! ${computerChoice} beats ${humanChoice}`;
+    computerScore++;
+}
 
+display.textContent = `Human: ${humanScore} | Computer: ${computerScore} | ${result}`;
+});
 
 /*
 function getComputerChoice () {
@@ -155,4 +137,4 @@ playGame();
 playGame();
 playGame();
 playGame();
-*/
+    */
