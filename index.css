@@ -1,26 +1,13 @@
 body {
     background-color: azure;
     font-family: Georgia, 'Times New Roman', Times, serif;
-};
+    box-sizing: border-box
+}
 .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 25px;
 
-};
-
-.selection, .score{
-    display: flex;
-    justify-content: center;
-    align-items: space-between;
-};
-
-#buttonDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-};
-.rock.paper.scissors{
-    height: 5vh;
-    width: 5vh;
 }
+
